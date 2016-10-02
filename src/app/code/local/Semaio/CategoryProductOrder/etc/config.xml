@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * This file is part of the Semaio_CategoryProductOrder module.
+ *
+ * See LICENSE.md bundled with this module for license details.
+ *
+ * @category  Semaio
+ * @package   Semaio_CategoryProductOrder
+ * @author    semaio GmbH <hello@semaio.com>
+ * @copyright 2016 semaio GmbH (http://www.semaio.com)
+ */
+-->
+<config>
+    <modules>
+        <Semaio_CategoryProductOrder>
+            <version>1.0.0</version>
+        </Semaio_CategoryProductOrder>
+    </modules>
+    <global>
+        <helpers>
+            <semaio_categoryproductorder>
+                <class>Semaio_CategoryProductOrder_Helper</class>
+            </semaio_categoryproductorder>
+        </helpers>
+        <models>
+            <semaio_categoryproductorder>
+                <class>Semaio_CategoryProductOrder_Model</class>
+            </semaio_categoryproductorder>
+        </models>
+    </global>
+    <adminhtml>
+        <translate>
+            <modules>
+                <semaio_categoryproductorder>
+                    <files>
+                        <default>Semaio_CategoryProductOrder.csv</default>
+                    </files>
+                </semaio_categoryproductorder>
+            </modules>
+        </translate>
+    </adminhtml>
+    <frontend>
+        <events>
+            <catalog_product_collection_load_before>
+                <observers>
+                    <semaio_categoryproductorder>
+                        <class>semaio_categoryproductorder/observer_sortOutOfStockProductsToCategoryEnd</class>
+                        <method>execute</method>
+                    </semaio_categoryproductorder>
+                </observers>
+            </catalog_product_collection_load_before>
+        </events>
+    </frontend>
+    <default>
+        <cataloginventory>
+            <options>
+                <show_out_of_stock_last_in_category>0</show_out_of_stock_last_in_category>
+            </options>
+        </cataloginventory>
+    </default>
+</config>

@@ -1,0 +1,16 @@
+{
+  "name": "semaio/magento1-categoryproductorder",
+  "description": "Automatically sort Out of Stock products to the end of a category.",
+  "license": "OSL-3.0",
+  "type": "magento-module",
+  "homepage": "https://github.com/semaio/Magento1-CategoryProductOrder",
+  "suggest": {
+    "magento-hackathon/magento-composer-installer": "*"
+  },
+  "authors": [
+    {
+      "name": "Rouven Alexander Rieker",
+      "email": "therouv@googlemail.com"
+    }
+  ]
+}
