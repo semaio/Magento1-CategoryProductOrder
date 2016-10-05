@@ -24,7 +24,6 @@ class Semaio_CategoryProductOrder_Model_Observer_SortOutOfStockProductsToCategor
     {
         /** @var Mage_Catalog_Block_Product_List_Toolbar $toolbar */
         $toolbar = Mage::getBlockSingleton('catalog/product_list_toolbar');
-        $toolbar = Mage::app()->getLayout()->getBlockSingleton('catalog/product_list_toolbar');
         if ($toolbar) {
             /** @var Mage_Catalog_Model_Resource_Product_Collection $collection */
             $collection = $observer->getEvent()->getCollection();
